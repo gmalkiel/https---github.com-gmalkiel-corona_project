@@ -9,21 +9,22 @@ body {
     height: 100vh;
 }
 
-/* עיצוב עבור כל רכיב */
 .info-item {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
-/* סגנון עבור הסמל */
 .info-icon {
     margin-right: 10px;
     font-size: 20px;
     color: #333; 
 }
 
-/* סגנון עבור טקסט המידע */
 .info-text {
     font-size: 16px;
+}
+
+#client_v{
+    margin-top: 900px;
 }
