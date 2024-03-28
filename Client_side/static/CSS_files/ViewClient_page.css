@@ -1,0 +1,29 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url('https://i.pinimg.com/originals/7e/b6/cf/7eb6cf3b64ce0c5a53e04ff603d70421.jpg');
+    background-color: black;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* עיצוב עבור כל רכיב */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* סגנון עבור הסמל */
+.info-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #333; 
+}
+
+/* סגנון עבור טקסט המידע */
+.info-text {
+    font-size: 16px;
+}

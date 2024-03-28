@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Client List</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='CSS_files/Home_page.css')}}">    
+        <script type="text/javascript" src="{{ url_for('static', filename='JS_files/Home_page.js')}}"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+   </head>
+    <body>
+        <div>
+            <div class="w3-container w3-theme-d3"> 
+            <h3 class="w3-padding-24">All Clients</h3>
+            {% for row in ids%}
+            <img src="{{pics[loop.index - 1]}}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+            <button onclick="delFunction('{{row}}')">Delete client</button>
+            <p class="w3-large w3-text-black w3-margin-right">
+                <a class="w3-large w3-text-black w3-margin-right" href="#" onclick="viewclient('{{row}}')">{{names[loop.index - 1]}}</a> {{row}}
+                <br>{{address[loop.index - 1]}}
+            </p>
+            {% endfor %}
+            <div>
+                <button onclick="func()">Add new client</button>
+            </div> 
+        </div>
+
+        
+             
+        </div>
+        <br>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Add new client</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS_files/AddClient_page.css')}}">    
+    <script type="text/javascript" src="{{ url_for('static', filename='JS_files/AddClient_page.js')}}"></script>
+</head>
+<body>
+    
+    <form id="AddClientForm" action="/add_client" method="POST">
+        <h2>New client</h2>
+        <p>
+            <input type="text" id="customerfirstname" name="customerfirstname" placeholder="Customer's first name" required>
+            <span id="userNameError" class="errorMessage"></span>
+        </p>
+        <p>
+            <input type="text" id="customerlastname" name="customerlastname" placeholder="Customer's last name" required>
+            <span id="userNameError" class="errorMessage"></span>
+        </p>
+
+        <p>
+            <input type="number" id="ID" name="ID" placeholder="ID" required>
+            <span id="emailError" class="errorMessage"></span>
+        </p>
+
+        <p>
+            <input type="text" id="city" name="city" placeholder="City" required>
+            <span id="confirmPasswordError" class="errorMessage"></span>
+        </p>
+        <p>
+            <input type="text" id="street" name="street" placeholder="Street" required>
+            <span id="confirmPasswordError" class="errorMessage"></span>
+        </p>
+
+        <p>
+            <input type="number" id="streetnumber" name="streetnumber" placeholder="Street number" required>
+            <span id="confirmPasswordError" class="errorMessage"></span>
+        </p>
+
+        <p>
+            <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+            <span id="dobError" class="errorMessage"></span>
+        </p>
+        
+        <p>
+            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+            <span id="phoneError" class="errorMessage"></span>
+        </p>
+
+        <p>
+            <input type="tel" id="cellphone" name="cellphone" placeholder="Cell phone" required>
+            <span id="passwordError" class="errorMessage"></span>
+        </p>
+        
+        <p>
+            <input type="text" id="picture" name="picture" placeholder="picture url" required>
+            <span id="passwordError" class="errorMessage"></span>
+        </p>
+        <input type="submit" value="Add" id="add_btn">
+        <div id="result"></div>
+    </form>
+    
+</body>
+</html>

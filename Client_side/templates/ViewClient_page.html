@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>client profile view</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='CSS_files/ViewClient_page.css')}}">    
+        <script type="text/javascript" src="{{ url_for('static', filename='JS_files/ViewClient_page.js')}}"></script>  
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <div class="w3-card w3-round w3-white w3-container" >
+            <h4 class="w3-center">Client Profile</h4>
+            <form action="/view_client" method="POST">
+                <p class="w3-center"><img src="https://i.pinimg.com/originals/7e/b6/cf/7eb6cf3b64ce0c5a53e04ff603d70421.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                
+                <hr>
+                <div class="info-item">
+                    <p><i class="info-icon">👤</i> Client first name: </p>
+                    <input type="text" value="{{client_data[2]}}" name="customerfirstname" id="customerfirstname">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">👤</i> Client last name: </p>
+                    <input type="text" value="{{client_data[1]}}" name="customerlastname" id="customerlastname">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">🔍</i> ID:</p>
+                    <input readonly type="number" name="ID" value="{{client_data[0]}}" id="ID">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">🏠</i> Address:</p>
+                    <input type="date" name="dob" value="{{client_data[7]}}" id="dob">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">🎂</i> Date of birth:</p>
+                    <input type="text" name="city" value="{{client_data[3]}}" id="city">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">👤</i> Street:</p>
+                    <input type="text" name="street" value="{{client_data[4]}}" id="street">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">👤</i> Street number:</p>
+                    <input type="number" name="streetnumber" value="{{client_data[8]}}" id="streetnumber">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">📱</i> Cell phone:</p>
+                    <input type="tel" name="cellphone" value="{{client_data[6]}}" id="cellphone">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">☎️</i> Phone:</p>
+                    <input type="tel" name="phone" value="{{client_data[5]}}" id="phone">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> First vaccination date:</p>
+                    <input type="date" name="vaccination_date_1" value="{{corona_data[1]}}" id="vaccination_date_1">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> First vaccination manufacturer:</p>
+                    <input type="text" name="manufacturer_1" value="{{corona_data[2]}}" id="manufacturer_1">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> Second vaccination date:</p>
+                    <input type="date" name="vaccination_date_2" value="{{corona_data[3]}}" id="vaccination_date_2">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> Second vaccination manufacturer:</p>
+                    <input type="text" name="manufacturer_2" value="{{corona_data[4]}}" id="manufacturer_2">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> Third vaccination date:</p>
+                    <input type="date" name="vaccination_date_3" value="{{corona_data[5]}}" id="vaccination_date_3">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> Third vaccination manufacturer:</p>
+                    <input type="text" name="manufacturer_3" value="{{corona_data[6]}}" id="manufacturer_3">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> Forth vaccination date:</p>
+                    <input type="date" name="vaccination_date_4" value="{{corona_data[7]}}" id="vaccination_date_4">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> Forth vaccination manufacturer:</p>
+                    <input type="text" name="manufacturer_4" value="{{corona_data[8]}}" id="manufacturer_4">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> Positive result date:</p>
+                    <input type="date" name="positive_result_date" value="{{corona_data[9]}}" id="positive_result_date">
+                </div>
+                <div class="info-item">
+                    <p><i class="info-icon">💉</i> Recovery date:</p>
+                    <input type="text" name="recovery_date" value="{{corona_data[10]}}" id="recovery_date">
+                </div>
+                <input type="submit" value="Save changes" id="change_btn">
+            </form>
+        </div>
+    </body>
+</html>
