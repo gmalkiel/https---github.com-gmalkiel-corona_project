@@ -40,7 +40,6 @@ def index():
         for row in all_name_data:
             formatted_row = ' '.join(map(str, row))
             names_data.append(formatted_row)
-        print(names_data)
 
         cursor_address = db.cursor()
         cursor_address.execute("SELECT city, street, streetnumber FROM clients")
@@ -49,54 +48,22 @@ def index():
         for row in all_address_data:
             formatted_address = ' '.join(map(str, row))
             address_data.append(formatted_address)
-        print(address_data)
 
         cursor_id = db.cursor()
         cursor_id.execute("SELECT cID FROM clients")
         all_id_data = cursor_id.fetchall()
         id_data = [str(val[0]) for val in all_id_data]
-        print(id_data)
 
         cursor_pic = db.cursor()
         cursor_pic.execute("SELECT picture FROM clients")
         all_pic_data = cursor_pic.fetchall()
         pic_data = [str(val[0]) for val in all_pic_data]
-        print(pic_data)
-    else:
-        db = g._database = sqlite3.connect('example.db')
-        cursor_names = db.cursor()
-        cursor_names.execute("SELECT customerfirstname, customerlastname FROM clients")
-        all_name_data = cursor_names.fetchall()
-        names_data = []
-        for row in all_name_data:
-            formatted_row = ' '.join(map(str, row))
-            names_data.append(formatted_row)
-        print(names_data)
-
-        cursor_address = db.cursor()
-        cursor_address.execute("SELECT city, street, streetnumber FROM clients")
-        all_address_data = cursor_address.fetchall()
-        address_data = []
-        for row in all_address_data:
-            formatted_address = ' '.join(map(str, row))
-            address_data.append(formatted_address)
-        print(address_data)
-
-        cursor_id = db.cursor()
-        cursor_id.execute("SELECT cID FROM clients")
-        all_id_data = cursor_id.fetchall()
-        id_data = [str(val[0]) for val in all_id_data]
-        print(id_data)
     return render_template("Home_page.html", names = names_data, address = address_data, ids = id_data, pics = pic_data)
 
-#@app.route("/add_clientfile", methods=["GET"])
-#def add_clientfile():
-#    return render_template("AddClient_page.html")
 
 @app.route("/add_client", methods=["POST","GET"])
 def add_client():
     if request.method == 'POST':
-        print("hygtrf")
         customerfirstname = request.form['customerfirstname']
         dob = request.form['dob']
         customerlastname = request.form['customerlastname']
@@ -107,7 +74,6 @@ def add_client():
         street = request.form['street']
         phone = request.form['phone']
         picture = request.form['picture']
-        print("2")
         conn = sqlite3.connect('example.db')
         cur = conn.cursor()
         cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='clients'")
@@ -134,11 +100,8 @@ def add_client():
 
         cur.execute("INSERT INTO clients (cID, customerlastname, customerfirstname, city, street, phone, cellphone, dob, streetnumber, picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
                 (cID, customerlastname, customerfirstname, city, street, phone, cellphone, dob, streetnumber, picture))
-
-
         conn.commit()
         conn.close()
-        response = 'Clients registered successfully'
         return redirect("/")
     return render_template("AddClient_page.html")
 
@@ -153,7 +116,6 @@ def viewclientprofile():
         cursor.execute("SELECT * FROM corona_vaccination WHERE id=?", (client_id,))
         corona_data = cursor.fetchone()
         conn.close()
-        print(corona_data)
         return render_template("ViewClient_page.html", client_data=client_data,corona_data = corona_data)
     if request.method == "POST":
         client_id = request.form['ID']
@@ -182,30 +144,14 @@ def viewclientprofile():
         conn.close()
         return redirect("/") 
 
-
-
-    """client_id = request.args.get('id')
-    conn = sqlite3.connect('example.db')
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM clients WHERE cID=?", (client_id,))
-    client_data = cursor.fetchone()
-    conn.close()
-    return render_template("ViewClient_page.html", client_data = client_data)"""
-
 @app.route("/del_client", methods=["post", "GET"])
 def delete_client():
-    print("hiidktgh i am so tired")
     client_id = request.args.get('id')
-    
-    print(client_id)
-    #checked = request.form["remove_b"]
     conn = sqlite3.connect('example.db')
     cursor = conn.cursor()
-    
     cursor.execute("DELETE FROM clients WHERE cID=?", (client_id,))
     conn.commit()
     conn.close()
-
     return redirect("/")
 
 
