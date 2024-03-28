@@ -12,18 +12,19 @@
    </head>
     <body>
         <div>
-            <div class="w3-container w3-theme-d3"> 
-            <h3 class="w3-padding-24">All Clients</h3>
+            <div class="w3-container"> 
+            <h1 class="w3-padding-24">All Clients</h1>
             {% for row in ids%}
             <img src="{{pics[loop.index - 1]}}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-            <button onclick="delFunction('{{row}}')">Delete client</button>
+            <button  class="b_add_rem" onclick="delFunction('{{row}}')">Delete client</button>
             <p class="w3-large w3-text-black w3-margin-right">
-                <a class="w3-large w3-text-black w3-margin-right" href="#" onclick="viewclient('{{row}}')">{{names[loop.index - 1]}}</a> {{row}}
+                <a class="w3-margin-right" href="#" onclick="viewclient('{{row}}')" >{{names[loop.index - 1]}}</a> {{row}}
                 <br>{{address[loop.index - 1]}}
             </p>
+            <hr>
             {% endfor %}
             <div>
-                <button onclick="func()">Add new client</button>
+                <button class="b_add_rem" onclick="func()">Add new client</button>
             </div> 
         </div>
 

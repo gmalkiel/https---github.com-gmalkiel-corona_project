@@ -1,55 +1,64 @@
+/* סגנון כללי */
 body {
-    font-family: "Raleway";
-    font-size: 1.5em;
-    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #848080;
 }
 
-img {
-    width: 400px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-label {
-    margin: 25px 5px;
-}
-
-#remove_items {
-    background-color: #E5E5E5;
-    color: #302B29;
-    padding: 30px;
-}
-
-#add_btn {
-    background-color: #01A88A;
-    color: white;
-    font-weight: bold;
-    border-radius: 20px;
-    border: 2px solid white;
-    margin: 10px;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-#remove_btn {
-    background-color: lightgray;
-    color: black;
-    font-weight: bold;
-    border-radius: 20px;
-    border: 2px solid white;
-    margin: 10px;
-    padding: 10px 15px;
-}
-
-select {
-    font-family: "Raleway";
-    font-size: 0.85em;
+/* סגנון כותרת */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
     text-align: center;
-    width: 200px;
-    margin: 50px 10px;
-    padding: 5px 0;
-    border: 2px solid darkgrey;
 }
 
-#add_btn:hover {
-    background-color: darkslategrey;
+/* סגנון כפתור */
+.b_add_rem {
+    background-color: #544c40;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.b_add_rem:hover {
+    background-color: #98ac99;
+}
+
+/* סגנון לקישור */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* סגנון של תמונות */
+img {
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hr {
+    border: none;
+    border-top: 1px solid #000000;
+    margin: 20px 0;
+}
+
+#cl_r{
+    font-size: small;
 }
