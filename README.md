@@ -8,7 +8,7 @@ First, run the server:
 Running the file app.py through the terminal.
 Then in a new tab in the browser we will go to the address: http://localhost:5000/
 And we will get to the home page that looks like this:
-![image](https://github.com/gmalkiel/https---github.com-gmalkiel-corona_project/assets/82965430/155560c2-e47d-44b8-a59a-2ce215da3cac)
+![image](https://github.com/gmalkiel/https---github.com-gmalkiel-corona_project/assets/82965430/37ad7fc7-9756-4d1a-9c1f-b518a3c49320)
 
 To add a client, click on the "Add new client" button
 which will open the following page for us:
